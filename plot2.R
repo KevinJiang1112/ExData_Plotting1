@@ -1,0 +1,5 @@
+source_data1 <- mutate(source_data,week_day = paste(Date,Time,sep = " "))
+time1 <- strptime(source_data1$week_day,"%d/%m/%Y %H:%M:%S")
+plot(time1,source_data1$Global_active_power,type = "l",xlab="",ylab = "Global Active Power (kilowatts)")
+dev.copy(png, file = "plot2.png")
+dev.off()
